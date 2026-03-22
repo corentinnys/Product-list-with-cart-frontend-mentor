@@ -25,6 +25,7 @@ function App() {
         setCart(prevCart => prevCart.filter(item => item.name !== itemName));
     };
 
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
@@ -71,9 +72,34 @@ function App() {
                                 </p>
                         </>
                     )}
+
+                    <a href="#"  onClick={() => setShowModal(true)} className='btn btn-primary'>confrimation</a>
                 </div>
 
             </div>
+            {showModal && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <h2>✅ Commande confirmée !</h2>
+                        <p>Merci pour votre commande.</p>
+                        <ul>
+                            {cart.map((item, index) => (
+                                <li key={index}>
+                                    {item.name} x{item.quantity} — ${(item.price * item.quantity).toFixed(2)}
+                                </li>
+                            ))}
+                        </ul>
+                        <p>Total : <strong>${cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}</strong></p>
+
+                        <button onClick={() => {
+                            setShowModal(false);
+                            setCart([]); // ✅ Vide le panier après confirmation
+                        }}>
+                            Nouvelle commande
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
