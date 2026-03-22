@@ -26,13 +26,13 @@ function App() {
     };
 
     const [showModal, setShowModal] = useState(false);
-
+    const [resetKey, setResetKey] = useState(0);
     return (
         <div>
             <h1>Desserts</h1>
             <div className="container">
 
-                <div className='items-right'>
+                <div className='items-right' key={resetKey}>
                     {data.map(item => (
                         <Cards key={item.id} {...item}
                                onAddToCart={addToCart}
@@ -93,7 +93,9 @@ function App() {
 
                         <button onClick={() => {
                             setShowModal(false);
-                            setCart([]); // ✅ Vide le panier après confirmation
+                            setCart([]);
+                            setResetKey(prev => prev + 1);
+
                         }}>
                             Nouvelle commande
                         </button>
