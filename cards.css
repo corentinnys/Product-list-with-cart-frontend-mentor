@@ -1,0 +1,46 @@
+.card {
+    width: 200px;           /* largeur de la carte */
+    border: 1px solid #ccc; /* bordure */
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;     /* centre le texte sous l'image */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* empile les enfants verticalement */
+    gap: 10px;              /* espace entre figure, h3 et p */
+}
+
+.card figure {
+    margin: 0;              /* supprime les marges par défaut */
+}
+
+.card img {
+    width: 100%;            /* image responsive */
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card p {
+    margin: 0;
+    color: #555;
+    font-weight: bold;
+}
+
+.btn-add{
+    background-color: white;
+    border: 1px solid brown;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 30px;
+    color: black;
+    position: relative;
+    top: 210px;
+
+}
+figcaption{
+    margin-top: 10px;
+}
