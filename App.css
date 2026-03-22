@@ -1,7 +1,28 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .items-right{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     width: 70%;
+    border: 1px solid black;
+}
+
+.items-left{
+    background-color: #f2f2f2;
+    height: 40vh;
+    padding: 30px;
+    border-radius: 15px;
+}
+.list-card{
+    list-style: none;
+}
+.list-card li{
+    padding: 10px;
+    border-bottom: 1px solid black;
 }
